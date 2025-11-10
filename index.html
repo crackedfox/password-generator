@@ -1,0 +1,116 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="password-generator">🔐 <span>Password Generator</span></h1>
+
+      <!-- Input container -->
+      <div class="input-container">
+        <input
+          class="password"
+          name="password"
+          aria-label="password"
+          readonly
+          type="text"
+        />
+        <span class="material-icons" id="icon-copy">content_copy</span>
+      </div>
+
+      <!-- Row - 0  / Error message -->
+      <div class="row error-row">
+        <p class="error-message">Please select any option</p>
+      </div>
+
+      <!-- Row - 1 / password range -->
+      <div class="row">
+        <input
+          class="password-range"
+          min="10"
+          max="20"
+          value="10"
+          type="range"
+          aria-label="range"
+          name="range"
+        />
+      </div>
+
+      <!-- Row - 2 / password length -->
+      <div class="row">
+        <label class="password-length" for="length">Password Length:</label>
+        <span class="password-length-value"></span>
+      </div>
+
+      <!-- Row - 3 / Uppercase option -->
+      <div class="row">
+        <label class="password-uppercase" for="uppercase"
+          >Include Uppercase Letters</label
+        >
+        <input
+          class="uppercase-checkbox"
+          type="checkbox"
+          name="uppercase"
+          id="uppercase"
+        />
+      </div>
+
+      <!-- Row - 4 / Lowercase option -->
+      <div class="row">
+        <label class="password-lowercase" for="lowercase"
+          >Include Lowercase Letters</label
+        >
+        <input
+          class="lowercase-checkbox"
+          type="checkbox"
+          name="lowercase"
+          id="lowercase"
+        />
+      </div>
+
+      <!-- Row - 5 / Numbers option -->
+      <div class="row">
+        <label class="password-numbers" for="numbers">Include Numbers</label>
+        <input
+          class="numbers-checkbox"
+          type="checkbox"
+          name="numbers"
+          id="numbers"
+        />
+      </div>
+
+      <!-- Row - 6 / Symbols option -->
+      <div class="row">
+        <label class="password-symbols" for="symbols">Include Symbols</label>
+        <input
+          class="symbols-checkbox"
+          type="checkbox"
+          name="symbols"
+          id="symbols"
+        />
+      </div>
+
+      <!-- Generate Password btn -->
+      <button class="generate-btn" role="button">Generate Password</button>
+
+      <!-- Author Name -->
+      <div>
+        <p class="author-name">
+          Made with <span class="heart">&hearts;</span> by FM
+        </p>
+      </div>
+
+      <!-- Toast Message -->
+      <div class="toast-message toast">Password Copied!</div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
