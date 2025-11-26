@@ -23,7 +23,21 @@ const passwordSymbols = "!@#$%^&*()_+[]{}|;:,.<>?";
 // Event Listeners
 button.addEventListener("click", generatePassword);
 passwordRange.addEventListener("input", () => {
+  // update display
   passwordLengthDisplay.textContent = passwordRange.value;
+
+  // trigger a quick pop animation on the number
+  passwordLengthDisplay.classList.remove("animate");
+  // force reflow so the animation can be retriggered
+  void passwordLengthDisplay.offsetWidth;
+  passwordLengthDisplay.classList.add("animate");
+
+  // update the range track fill using a gradient
+  const min = Number(passwordRange.min) || 0;
+  const max = Number(passwordRange.max) || 100;
+  const val = Number(passwordRange.value);
+  const percent = ((val - min) / (max - min)) * 100;
+  passwordRange.style.background = `linear-gradient(90deg, #94d488 ${percent}%, #444 ${percent}%)`;
 });
 copyIcon.addEventListener("click", () => {
   navigator.clipboard.writeText(passwordInput.value);
